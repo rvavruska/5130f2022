@@ -1,0 +1,47 @@
+<!--
+ File: /~rvavrusk/index.html
+ Ryan Vavruska, UMass Lowell Student, ryan_vavruska@student.uml.edu
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Ryan Vavruska</title>
+    </head>
+    <body style="background-color:gray;">
+            <!-- A header for the page -->
+            <header style="text-align center;">
+                <h1>COMP 5130: Internet and Web Systems I</h1>
+            </header>
+            <!-- A small paragraph about me below the header as well as contact email -->
+            <div id="content">
+                <h2>Landing Page</h2>
+				<p id="currentDate"></p>
+				<script>
+					let date = new Date();
+					let today = date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + date.getDate();
+					document.getElementById("currentDate").innerHTML = "Today is " + today + ".";
+				</script>
+				<h3>Contact Information</h3>
+                <p>
+                    Ryan Vavruska<br/>
+                    ryan_vavruska@student.uml.edu<br/>
+					rvavrusk@cs.uml.edu<br/>
+                </p>
+                <h3>Summary</h3>
+				<img src="images/me.jpg" alt="Me" height="300" width="300" style="border: 5px solid #444">
+                <p>My name is Ryan Vavruska and I am a last semester masters student in Computer Science<br/>
+				This page exists as a landing page for my Internet and Web Systems course and will be updated<br/>
+				based on assignments from that course accordingly.
+                <h3>Useful Links</h3>
+                <p>Some links related to things about me</p>
+                <ul id="links">
+                    <li><a href="https://www.github.com/rvavruska">Github</a></li>
+                </ul>              
+                <!-- Footer detailing last modified date and time -->
+                <footer><i>Page last updated October 4th, 2022</i></footer>
+            </div>
+        </div>
+    </body>
+</html>
+
