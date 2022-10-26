@@ -1,0 +1,105 @@
+<!--
+ File: /~rvavrusk/index.html
+ Ryan Vavruska, UMass Lowell Student, ryan_vavruska@student.uml.edu
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Ryan Vavruska</title>
+		 <link rel="stylesheet" href="style.css">
+    </head>
+    <body style="background-color:gray;">
+            <!-- A header for the page -->
+            <header style="text-align center;">
+                <h1>COMP 5130: Internet and Web Systems I</h1>
+            </header>
+            <!-- A small paragraph about me below the header as well as contact email -->
+            <div id="content">
+                <h2>Landing Page</h2>
+				<p id="currentDate"></p>
+				<script>
+					let date = new Date();
+					let today = date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + date.getDate();
+					document.getElementById("currentDate").innerHTML = "Today is " + today + ".";
+				</script>
+				<form>
+				  <label for="fname">First name:</label><br>
+				  <input type="text" id="fname" name="fname"><br>
+				  <label for="lname">Last name:</label><br>
+				  <input type="text" id="lname" name="lname"><br>
+				  <label for="from">Where you are from?</label><br>
+				  <input type="text" id="from" name="from"><br>
+				  <label for="where">Where do you want to be?</label><br>
+				  <input type="text" id="where" name="where"><br>
+				  <label for="family">Where your family is from?</label><br>
+				  <input type="text" id="family" name="family"><br>
+				</form>
+				<p>Upload a photo of yourself!</br>
+				<input type="file" id="photo"></br>
+				Upload your resume!</br>
+				<input type="file" id="resume">
+				</p>
+				<button id="submitButton">Submit</button>
+				<h3>User Information</h3>
+				<p id="location"></p>
+				<p id="aboutUser"></p>
+				<script type="text/javascript" src="main.js"></script>
+				<h3>Contact Information</h3>
+                <p>
+                    Ryan Vavruska<br/>
+                    ryan_vavruska@student.uml.edu<br/>
+					rvavrusk@cs.uml.edu<br/>
+                </p>
+                <h3>Summary</h3>
+				<img src="images/me.jpg" alt="Me" height="300" width="300" style="border: 5px solid #444">
+                <p>My name is Ryan Vavruska and I am a last semester masters student in Computer Science<br/>
+				This page exists as a landing page for my Internet and Web Systems course and will be updated<br/>
+				based on assignments from that course accordingly.
+				<h3>Fun Facts about Me</h3>
+				<p>I was born in Winchester, MA.</p>
+				<p>I currently live in Framingham, MA</p>
+				<p>I would like to live in Concord, Massachusetts one day.</p>
+				<p>I work full-time as a Software Engineer in Framingham.</p>
+				<h3>Investment Portfolio</h3>
+				<table>
+				  <tr>
+					<th>Investment Name</th>
+					<th>Bought At</th>
+					<th>Current Value</th>
+					<th>% Of Portfolio</th>
+				  </tr>
+				  <tr>
+					<td>AMZN</td>
+					<td>$118.40</td>
+					<td>$120.60</td>
+					<td>21%</td>
+				  </tr>
+				  <tr>
+					<td>GOOGL</td>
+					<td>$102.64</td>
+					<td>$104.48</td>
+					<td>40%</td>
+				  </tr>
+				  	<tr>
+					<td>NFLX</td>
+					<td>$296.42</td>
+					<td>$291.02</td>
+					<td>39%</td>
+				  </tr>
+				</table>
+                <h3>Useful Links</h3>
+                <p>Some links related to things about me</p>
+                <ul id="links">
+                    <li><a href="https://www.github.com/rvavruska">Github</a></li>
+					<li><a href="resume.pdf">Resume</a></li>
+                </ul>              
+				<h3>Video I Find Interesting</h3>
+				<iframe width="300" height="200" src="https://www.youtube.com/embed/ThdO9beHhpA" title="IP Address - IPv4 vs IPv6 Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <!-- Footer detailing last modified date and time -->
+                <footer><i>Page last updated October 25th, 2022</i></footer>
+            </div>
+        </div>
+    </body>
+</html>
+
