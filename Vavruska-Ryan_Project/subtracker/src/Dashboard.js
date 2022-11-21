@@ -5,7 +5,7 @@ import "./Dashboard.css";
 import { auth, db, logout } from "./firebase";
 import { query, collection, getDocs, where, deleteDoc, doc } from "firebase/firestore";
 import Table from "./Table";
-import Unsubscribe from "./Unsubsribe";
+import Unsubscribe from "./Unsubscribe";
 
 function Dashboard() {
   const [user, loading, error] = useAuthState(auth);
