@@ -7,11 +7,13 @@ import { query, collection, getDocs, where, addDoc } from "firebase/firestore";
 import "./AddSubscription.css";
 import "react-datepicker/dist/react-datepicker.css";
 function AddSubscription() {
+  const [initList, setListInit] = useState(false);
   const [useOther, setUseOther] = useState(false);
   const [productName, setProductName] = useState("netflix");
   const [other, setOther] = useState("");
   const [date, setStartDate] = useState(new Date());
   const [cost, setCost] = useState("");
+  const [supportedList, setSupported] = useState("");
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
   const addProduct = async () => {
@@ -34,6 +36,20 @@ function AddSubscription() {
     navigate("/dashboard")
   };
 
+  const getSupported = async () => {
+      if (initList == false){
+      const q = query(collection(db, "supported"));
+      const doc = await getDocs(q);
+      setSupported(doc.docs.map((item, i) => {
+        return (
+          <option key={i} value={productName}>{item.data().productName}</option>
+        )
+      }))
+      
+      setListInit(true);
+    }
+  }
+
   const handleChange = ((event) => {
     setUseOther(event.target.value == "other");
     if (useOther == false) {
@@ -48,15 +64,16 @@ function AddSubscription() {
     if (loading) return;
     if (!user) navigate("/login");
   }, [user, loading]);
+
+  getSupported();
   return (
     <div className="register">
       <div>
-      <label>Supported Products:</label>
-      <select value={productName} onChange={handleChange}>
-            <option value="netflix">Netflix</option>
-            <option value="spotify">Spotify</option>
-            <option value="other">Other</option>
-          </select>
+        <label>Supported Products:</label>
+        <select value={productName} onChange={handleChange}>
+        {supportedList}
+        <option value="other">Other</option>
+        </select>
         <label>Other:</label>
         <input disabled={!useOther} type="text" value={other} onChange={(e) => setOther(e.target.value)} placeholder="Product Name"/>
         <label>Renewal Date:</label>
