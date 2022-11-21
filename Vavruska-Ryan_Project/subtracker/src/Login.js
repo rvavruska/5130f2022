@@ -16,6 +16,7 @@ function Login() {
   }, [user, loading]);
   return (
     <div className="login">
+      <h1 className="title">SubTracker</h1>
       <div>
         <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email"/>
         <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password"
