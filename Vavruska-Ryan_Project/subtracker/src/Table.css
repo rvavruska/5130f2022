@@ -1,0 +1,7 @@
+table {
+    align-items: center;
+}
+
+table, th, td {
+    border: 1px solid;
+  }
