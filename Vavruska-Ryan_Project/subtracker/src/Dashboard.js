@@ -69,16 +69,16 @@ function Dashboard() {
 
   return (
     <div className="dashboard">
-       <div>
+       <div className="userInfo">
          <div>Logged in as {name}</div>
          <div>{user?.email}</div>
          <button onClick={logout}>Logout</button>
-         </div>
-         <div>
+        </div>
+         <div className="tablediv">
          <Table data={data} unsubscribe={unsubscribeMethod} remove={removeSubscription} />
          <button onClick={addSubscription}>Add Subscription</button>
          </div>
-         <div>
+         <div className="unsubscribe">
           <Unsubscribe product={product}/>
          </div>
      </div>

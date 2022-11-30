@@ -67,20 +67,20 @@ function AddSubscription() {
 
   getSupported();
   return (
-    <div className="register">
-      <div>
+    <div className="addsub">
+      <div className="addsubdiv">
         <label>Supported Products:</label>
         <select value={productName} onChange={handleChange}>
         {supportedList}
         <option value="other">Other</option>
         </select>
-        <label>Other:</label>
-        <input disabled={!useOther} type="text" value={other} onChange={(e) => setOther(e.target.value)} placeholder="Product Name"/>
+        <label>Other:</label><br />
+        <input className="textInput" disabled={!useOther} type="text" value={other} onChange={(e) => setOther(e.target.value)} placeholder="Product Name"/>
         <label>Renewal Date:</label>
-        <DatePicker selected={date} onChange={(date) => setStartDate(date)} />
+        <DatePicker className="textInput" selected={date} onChange={(date) => setStartDate(date)} />
         <label>Monthly Cost ($):</label>
-        <input type="text" className="" value={cost} onChange={(e) => setCost(e.target.value)} placeholder="Price"/>
-        <button onClick={addProduct}>Add Product</button>
+        <input className="textInput" type="text" value={cost} onChange={(e) => setCost(e.target.value)} placeholder="Price"/>
+        <button className="inputbutton"onClick={addProduct}>Add Product</button>
         <div>
           Back to <Link to="/dashboard">dashboard.</Link>
         </div>

@@ -88,8 +88,8 @@ function Unsubscribe({product}) {
         return (
             <div>
             <img src={logo} alt={logo}></img>
-            <a href={linkTo}>Unsubscribe</a>
-            <div>{steps}</div>
+            <a href={linkTo}>Link to unsubscribe.</a>
+            <div>Steps: {steps}</div>
             </div>
         )
     }

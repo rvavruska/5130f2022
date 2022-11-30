@@ -57,10 +57,9 @@ try {
 const sendPasswordReset = async (email) => {
     try {
       await sendPasswordResetEmail(auth, email);
-      alert("Password reset link sent!");
     } catch (err) {
-      console.error(err);
-      alert(err.message);
+      // We don't want the user to know if an account under that email exists or not,
+      // just tell them email sent and swallow the error.
     }
 };
 

@@ -4,4 +4,22 @@
     display: block;
     align-items: center;
     justify-content: center;
+    background-color: aliceblue;
+}
+
+.tablediv {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+}
+
+.userInfo{
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-around;
+    border: 1px solid black;
 }

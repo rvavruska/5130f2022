@@ -22,11 +22,12 @@ function Register() {
   }, [user, loading]);
   return (
     <div className="register">
-      <div>
-        <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Name"/>
-        <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email"/>
-        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password"/>
-        <button onClick={register}> Register</button>
+      <div className="registerdiv">
+        <h1>Register to SubTracker</h1>
+        <input className="textInput" type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Name"/>
+        <input className="textInput" type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email"/>
+        <input className="textInput" type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password"/>
+        <button className="inputbutton" onClick={register}> Register</button>
         <div>
           Already have an account? <Link to="/">Login</Link> now.
         </div>
