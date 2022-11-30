@@ -50,7 +50,7 @@ function Unsubscribe({product}) {
                 let data = d.data();
                 let name = await fetchUserName(data.uid);
                 let msg = "";
-                msg = "<div className ='post'>" + "<div className=poster>" +
+                msg = "<div className ='post'><div className=poster>" +
                 "<p>" + name + "</p>" +
                 "<p>" + new Date(data.date).toDateString() + "</p>" +
                 "</div>" +
