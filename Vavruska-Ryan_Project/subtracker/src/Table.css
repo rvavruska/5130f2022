@@ -6,4 +6,20 @@ table {
 
 table, th, td {
     border: 1px solid;
-  }
+}
+
+.unsubButton {
+    height: 30px;
+    width: 30px;
+}
+
+.removeProduct {
+    background-color: red;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+}
+
+.removeProduct:hover {
+    background-color: lightcoral;
+}

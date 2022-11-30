@@ -69,6 +69,7 @@ function AddSubscription() {
   return (
     <div className="addsub">
       <div className="addsubdiv">
+        <h1>Add Subscription</h1>
         <label>Supported Products:</label>
         <select value={productName} onChange={handleChange}>
         {supportedList}

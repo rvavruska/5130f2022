@@ -31,7 +31,12 @@ function Dashboard() {
   const unsubscribeMethod = (event) => {
     let productName = event.currentTarget
     .parentElement.parentElement.cells[0].textContent;
-    setProduct(productName);
+    if (product != "" && product == productName) {
+      setProduct("");
+    }
+    else{
+      setProduct(productName.toLowerCase());
+    }
   };
 
   const removeSubscription = async (event) => {
@@ -48,6 +53,9 @@ function Dashboard() {
         }
       });
       fetchSubs();
+      if (product == productName) {
+        setProduct("");
+      }
   };
 
   const fetchSubs = async () => {
@@ -76,7 +84,7 @@ function Dashboard() {
         </div>
          <div className="tablediv">
          <Table data={data} unsubscribe={unsubscribeMethod} remove={removeSubscription} />
-         <button onClick={addSubscription}>Add Subscription</button>
+         <button className="addSubButton" onClick={addSubscription}>+</button>
          </div>
          <div className="unsubscribe">
           <Unsubscribe product={product}/>

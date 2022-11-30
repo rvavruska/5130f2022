@@ -11,6 +11,7 @@
     margin-left: auto;
     margin-right: auto;
     padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .userInfo{
@@ -22,4 +23,20 @@
     margin-right: auto;
     justify-content: space-around;
     border: 1px solid black;
+}
+
+.addSubButton {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height:30px;
+    width:30px;
+    background-color: green;
+    margin-top: 10px;
+    cursor:pointer;
+    font-size: 24px;
+}
+
+.addSubButton:hover {
+    background-color: lightgreen;
 }

@@ -2,7 +2,7 @@ import { createRoutesFromElements } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, db, logout } from "./firebase";
-import { query, collection, getDocs, where, addDoc } from "firebase/firestore";
+import { query, collection, getDocs, where, addDoc, updateDoc } from "firebase/firestore";
 import "./Unsubscribe.css";
 
 function Unsubscribe({product}) {
@@ -50,9 +50,10 @@ function Unsubscribe({product}) {
                 let data = d.data();
                 let name = await fetchUserName(data.uid);
                 let msg = "";
-                msg = "<div className ='post'>" +
-                name +
-                new Date(data.date).toDateString() +
+                msg = "<div className ='post'>" + "<div className=poster>" +
+                "<p>" + name + "</p>" +
+                "<p>" + new Date(data.date).toDateString() + "</p>" +
+                "</div>" +
                 "<p>" + data.post + "</p>" +
                 "</div>";
                 posts = posts + msg;
@@ -63,12 +64,24 @@ function Unsubscribe({product}) {
     }
 
     const submitPost = async () => {
-        await addDoc(collection(db, "forum"), {
-            uid: user.uid,
-            product,
-            date: new Date().toISOString(),
-            post
-            });
+        const q = query(collection(db, "forum"), 
+        where("product", "==", product),
+        where("uid", "==", user.uid));
+        const doc = await getDocs(q);
+        if (doc.docs.length){
+            await updateDoc(doc.docs[0].ref, {post, 
+                date: new Date().toISOString()});
+        }
+        else{
+            await addDoc(collection(db, "forum"), {
+                uid: user.uid,
+                product,
+                date: new Date().toISOString(),
+                post
+                });
+        }
+        setMsgInit(false);
+        getUnsupportedInfo();
     }
 
     if (product !== ""){
@@ -77,19 +90,22 @@ function Unsubscribe({product}) {
             var parse = require('html-react-parser');
             getUnsupportedInfo();
             return (
-                <div>
-                    {parse(messages)};
-                    <textarea id="post" value={post} onChange={(e) => setPost(e.target.value)} rows="4" cols="50">
+                <div className="unsupportedDiv">
+                    {parse(messages)}
+                    <textarea id="post" value={post} 
+                    onChange={(e) => setPost(e.target.value)} rows="4" cols="50"
+                    placeholder="Enter (or update) your own instructions here.">
                     </textarea>
                     <button onClick={submitPost}>Submit</button>
                 </div>
             )
         }
         return (
-            <div>
+            <div className="supportedDiv">
             <img src={logo} alt={logo}></img>
-            <a href={linkTo}>Link to unsubscribe.</a>
-            <div>Steps: {steps}</div>
+            <a href={linkTo}>Link to unsubscribe</a>
+            <h3>Instructions:</h3>
+            <div>{steps}</div>
             </div>
         )
     }

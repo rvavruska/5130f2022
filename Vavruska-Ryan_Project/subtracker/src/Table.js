@@ -39,7 +39,7 @@ function Table({data, remove, unsubscribe}) {
             <th>Cost</th>
             <th>Renewal Date</th>
             <th>Unsubscribe</th>
-            <th>Remove Product</th>
+            <th>Remove</th>
            </tr>
           </thead>
           <tbody>
@@ -49,8 +49,8 @@ function Table({data, remove, unsubscribe}) {
               <td>{val.data().productName}</td>
               <td>${val.data().cost}</td>
               <td>{new Date((val.data().date)).toDateString()}</td>
-              <td><button onClick={unsubscribe}>Unsubscribe</button></td>
-              <td><button onClick={remove}>X</button></td>
+              <td><button className="unsubButton" onClick={unsubscribe}>↓</button></td>
+              <td><button className="removeProduct" onClick={remove}>X</button></td>
             </tr>
           )
         })}
