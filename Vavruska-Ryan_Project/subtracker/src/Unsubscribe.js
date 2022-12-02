@@ -1,3 +1,8 @@
+/*
+  File authored by Ryan Vavruska
+  ryan_vavruska@student.uml.edu
+  2022
+*/
 import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, db, logout } from "./firebase";

@@ -1,3 +1,8 @@
+/*
+  File authored by Ryan Vavruska
+  ryan_vavruska@student.uml.edu
+  2022
+*/
 import { initializeApp } from "firebase/app";
 import { getAuth,
     signInWithEmailAndPassword, 

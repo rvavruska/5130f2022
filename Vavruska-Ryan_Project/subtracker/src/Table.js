@@ -1,5 +1,8 @@
-import { useEffect } from "react";
-import { createRoutesFromElements } from "react-router-dom";
+/*
+  File authored by Ryan Vavruska
+  ryan_vavruska@student.uml.edu
+  2022
+*/
 import "./Table.css";
 
 function Table({data, remove, unsubscribe}) {

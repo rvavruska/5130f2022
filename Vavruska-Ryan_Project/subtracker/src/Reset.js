@@ -1,3 +1,8 @@
+/*
+  File authored by Ryan Vavruska
+  ryan_vavruska@student.uml.edu
+  2022
+*/
 import { sendPasswordResetEmail } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
