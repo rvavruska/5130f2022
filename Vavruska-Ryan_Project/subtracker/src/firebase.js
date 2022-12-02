@@ -1,7 +1,7 @@
 /*
   File authored by Ryan Vavruska
   ryan_vavruska@student.uml.edu
-  2022
+  2022. Some content modified from https://blog.logrocket.com/user-authentication-firebase-react-apps/ 
 */
 import { initializeApp } from "firebase/app";
 import { getAuth,

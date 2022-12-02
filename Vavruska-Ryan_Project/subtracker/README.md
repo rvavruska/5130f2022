@@ -4,7 +4,7 @@ This project attempts to provide a free alternative to applications that track y
 
 Build Instructions
 
-1. Clone the repository to a directory
+1. Clone the repository to a directory and navigate to Vavruska-Ryan_Project/subtracker/
 2. Install the latest version of node.js
 3. Open the directory in a command line and type npm install to download all packages.
 4. Type npm run build to build the project.

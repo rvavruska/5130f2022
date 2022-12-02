@@ -1,7 +1,7 @@
 /*
   File authored by Ryan Vavruska
   ryan_vavruska@student.uml.edu
-  2022
+  2022. Some content modified from https://blog.logrocket.com/user-authentication-firebase-react-apps/ 
 */
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
