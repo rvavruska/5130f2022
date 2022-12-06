@@ -47,7 +47,7 @@ function AddSubscription() {
       const doc = await getDocs(q);
       setSupported(doc.docs.map((item, i) => {
         return (
-          <option key={i} value={productName}>{item.data().productName}</option>
+          <option key={i} value={item.data().productName}>{item.data().productName}</option>
         )
       }))
       
