@@ -19,9 +19,9 @@ function Unsubscribe({product}) {
     const [messages, setMessages] = useState("");
     const [msgInit, setMsgInit] = useState(false);
 
-    const fetchUserName = async () => {
+    const fetchUserName2 = async (uid) => {
         try {
-          const q = query(collection(db, "users"), where("uid", "==", user?.uid));
+          const q = query(collection(db, "users"), where("uid", "==", uid));
           const doc = await getDocs(q);
           const data = doc.docs[0].data();
           return data.name;
@@ -52,7 +52,7 @@ function Unsubscribe({product}) {
             let posts = "";
             doc.docs.forEach(await async function(d) {
                 let data = d.data();
-                let name = await fetchUserName(data.uid);
+                let name = await fetchUserName2(data.uid);
                 let msg = "";
                 msg = "<div className ='post'><div className=poster>" +
                 "<p>" + name + "</p>" +
